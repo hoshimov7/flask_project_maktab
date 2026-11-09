@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}  {% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    </head>
+    <body>
+        <header class="header">
+            <nav class="nav">
+                <a {% if select == 'g' %} class="nav-rang" {% endif %}  href="/">Главная страница</a>
+                <a {% if select == 'about' %} class="nav-rang" {% endif %} href="{{ url_for('main.about') }}">О нас</a>
+                <a {% if select == 'schedule' %} class="nav-rang" {% endif %} href="{{ url_for('main.schedule') }}">Расписания</a>
+                <a {% if select == 'post_form' %} class="nav-rang" {% endif %} href="{{ url_for('main.post_form')}}">Form</a>
+            </nav>
+        </header>
+        <main class="content">
+            {% block content %}
+           
+            {% endblock %}
+        </main>
+    </body>
+</html>

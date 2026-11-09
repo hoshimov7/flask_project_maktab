@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Form {% endblock %}
+
+{% block content %}
+    <div class="form">
+        <form method="post">
+            <p>Title:  <input name="title" type="text" required ></p>
+            <p>Content <input name="content" type="text"  required></p>
+            <p id="form-add"><input id="form-input" type="submit" value="Add" ></p>
+            
+        </form>
+    </div>
+{% endblock %}
